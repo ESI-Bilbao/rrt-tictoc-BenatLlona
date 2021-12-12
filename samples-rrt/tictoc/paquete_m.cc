@@ -1,5 +1,5 @@
 //
-// Generated file, do not edit! Created by nedtool 5.6 from tictoc14.msg.
+// Generated file, do not edit! Created by nedtool 5.6 from paquete.msg.
 //
 
 // Disable warnings about unused variables, empty switch stmts, etc:
@@ -26,7 +26,7 @@
 
 #include <iostream>
 #include <sstream>
-#include "tictoc14_m.h"
+#include "paquete_m.h"
 
 namespace omnetpp {
 
@@ -177,92 +177,92 @@ inline std::ostream& operator<<(std::ostream& out, const std::vector<T,A>& vec)
     return out;
 }
 
-Register_Class(TicTocMsg14)
+Register_Class(paquete_struct)
 
-TicTocMsg14::TicTocMsg14(const char *name, short kind) : ::omnetpp::cMessage(name,kind)
+paquete_struct::paquete_struct(const char *name, short kind) : ::omnetpp::cPacket(name,kind)
 {
-    this->source = 0;
-    this->destination = 0;
-    this->hopCount = 0;
+    this->fromSource = false;
+    this->sequenceNumber = 0;
+    this->origin = 0;
 }
 
-TicTocMsg14::TicTocMsg14(const TicTocMsg14& other) : ::omnetpp::cMessage(other)
+paquete_struct::paquete_struct(const paquete_struct& other) : ::omnetpp::cPacket(other)
 {
     copy(other);
 }
 
-TicTocMsg14::~TicTocMsg14()
+paquete_struct::~paquete_struct()
 {
 }
 
-TicTocMsg14& TicTocMsg14::operator=(const TicTocMsg14& other)
+paquete_struct& paquete_struct::operator=(const paquete_struct& other)
 {
     if (this==&other) return *this;
-    ::omnetpp::cMessage::operator=(other);
+    ::omnetpp::cPacket::operator=(other);
     copy(other);
     return *this;
 }
 
-void TicTocMsg14::copy(const TicTocMsg14& other)
+void paquete_struct::copy(const paquete_struct& other)
 {
-    this->source = other.source;
-    this->destination = other.destination;
-    this->hopCount = other.hopCount;
+    this->fromSource = other.fromSource;
+    this->sequenceNumber = other.sequenceNumber;
+    this->origin = other.origin;
 }
 
-void TicTocMsg14::parsimPack(omnetpp::cCommBuffer *b) const
+void paquete_struct::parsimPack(omnetpp::cCommBuffer *b) const
 {
-    ::omnetpp::cMessage::parsimPack(b);
-    doParsimPacking(b,this->source);
-    doParsimPacking(b,this->destination);
-    doParsimPacking(b,this->hopCount);
+    ::omnetpp::cPacket::parsimPack(b);
+    doParsimPacking(b,this->fromSource);
+    doParsimPacking(b,this->sequenceNumber);
+    doParsimPacking(b,this->origin);
 }
 
-void TicTocMsg14::parsimUnpack(omnetpp::cCommBuffer *b)
+void paquete_struct::parsimUnpack(omnetpp::cCommBuffer *b)
 {
-    ::omnetpp::cMessage::parsimUnpack(b);
-    doParsimUnpacking(b,this->source);
-    doParsimUnpacking(b,this->destination);
-    doParsimUnpacking(b,this->hopCount);
+    ::omnetpp::cPacket::parsimUnpack(b);
+    doParsimUnpacking(b,this->fromSource);
+    doParsimUnpacking(b,this->sequenceNumber);
+    doParsimUnpacking(b,this->origin);
 }
 
-int TicTocMsg14::getSource() const
+int paquete_struct::getFromSource() const
 {
-    return this->source;
+    return this->fromSource;
 }
 
-void TicTocMsg14::setSource(int source)
+void paquete_struct::setFromSource(int fromSource)
 {
-    this->source = source;
+    this->fromSource = fromSource;
 }
 
-int TicTocMsg14::getDestination() const
+int paquete_struct::getSequenceNumber() const
 {
-    return this->destination;
+    return this->sequenceNumber;
 }
 
-void TicTocMsg14::setDestination(int destination)
+void paquete_struct::setSequenceNumber(int sequenceNumber)
 {
-    this->destination = destination;
+    this->sequenceNumber = sequenceNumber;
 }
 
-int TicTocMsg14::getHopCount() const
+int paquete_struct::getOrigin() const
 {
-    return this->hopCount;
+    return this->origin;
 }
 
-void TicTocMsg14::setHopCount(int hopCount)
+void paquete_struct::setOrigin(int origin)
 {
-    this->hopCount = hopCount;
+    this->origin = origin;
 }
 
-class TicTocMsg14Descriptor : public omnetpp::cClassDescriptor
+class paquete_structDescriptor : public omnetpp::cClassDescriptor
 {
   private:
     mutable const char **propertynames;
   public:
-    TicTocMsg14Descriptor();
-    virtual ~TicTocMsg14Descriptor();
+    paquete_structDescriptor();
+    virtual ~paquete_structDescriptor();
 
     virtual bool doesSupport(omnetpp::cObject *obj) const override;
     virtual const char **getPropertyNames() const override;
@@ -284,24 +284,24 @@ class TicTocMsg14Descriptor : public omnetpp::cClassDescriptor
     virtual void *getFieldStructValuePointer(void *object, int field, int i) const override;
 };
 
-Register_ClassDescriptor(TicTocMsg14Descriptor)
+Register_ClassDescriptor(paquete_structDescriptor)
 
-TicTocMsg14Descriptor::TicTocMsg14Descriptor() : omnetpp::cClassDescriptor("TicTocMsg14", "omnetpp::cMessage")
+paquete_structDescriptor::paquete_structDescriptor() : omnetpp::cClassDescriptor("paquete_struct", "omnetpp::cPacket")
 {
     propertynames = nullptr;
 }
 
-TicTocMsg14Descriptor::~TicTocMsg14Descriptor()
+paquete_structDescriptor::~paquete_structDescriptor()
 {
     delete[] propertynames;
 }
 
-bool TicTocMsg14Descriptor::doesSupport(omnetpp::cObject *obj) const
+bool paquete_structDescriptor::doesSupport(omnetpp::cObject *obj) const
 {
-    return dynamic_cast<TicTocMsg14 *>(obj)!=nullptr;
+    return dynamic_cast<paquete_struct *>(obj)!=nullptr;
 }
 
-const char **TicTocMsg14Descriptor::getPropertyNames() const
+const char **paquete_structDescriptor::getPropertyNames() const
 {
     if (!propertynames) {
         static const char *names[] = {  nullptr };
@@ -312,19 +312,19 @@ const char **TicTocMsg14Descriptor::getPropertyNames() const
     return propertynames;
 }
 
-const char *TicTocMsg14Descriptor::getProperty(const char *propertyname) const
+const char *paquete_structDescriptor::getProperty(const char *propertyname) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     return basedesc ? basedesc->getProperty(propertyname) : nullptr;
 }
 
-int TicTocMsg14Descriptor::getFieldCount() const
+int paquete_structDescriptor::getFieldCount() const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     return basedesc ? 3+basedesc->getFieldCount() : 3;
 }
 
-unsigned int TicTocMsg14Descriptor::getFieldTypeFlags(int field) const
+unsigned int paquete_structDescriptor::getFieldTypeFlags(int field) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -340,7 +340,7 @@ unsigned int TicTocMsg14Descriptor::getFieldTypeFlags(int field) const
     return (field>=0 && field<3) ? fieldTypeFlags[field] : 0;
 }
 
-const char *TicTocMsg14Descriptor::getFieldName(int field) const
+const char *paquete_structDescriptor::getFieldName(int field) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -349,24 +349,24 @@ const char *TicTocMsg14Descriptor::getFieldName(int field) const
         field -= basedesc->getFieldCount();
     }
     static const char *fieldNames[] = {
-        "source",
-        "destination",
-        "hopCount",
+        "fromSource",
+        "sequenceNumber",
+        "origin",
     };
     return (field>=0 && field<3) ? fieldNames[field] : nullptr;
 }
 
-int TicTocMsg14Descriptor::findField(const char *fieldName) const
+int paquete_structDescriptor::findField(const char *fieldName) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     int base = basedesc ? basedesc->getFieldCount() : 0;
-    if (fieldName[0]=='s' && strcmp(fieldName, "source")==0) return base+0;
-    if (fieldName[0]=='d' && strcmp(fieldName, "destination")==0) return base+1;
-    if (fieldName[0]=='h' && strcmp(fieldName, "hopCount")==0) return base+2;
+    if (fieldName[0]=='f' && strcmp(fieldName, "fromSource")==0) return base+0;
+    if (fieldName[0]=='s' && strcmp(fieldName, "sequenceNumber")==0) return base+1;
+    if (fieldName[0]=='o' && strcmp(fieldName, "origin")==0) return base+2;
     return basedesc ? basedesc->findField(fieldName) : -1;
 }
 
-const char *TicTocMsg14Descriptor::getFieldTypeString(int field) const
+const char *paquete_structDescriptor::getFieldTypeString(int field) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -382,7 +382,7 @@ const char *TicTocMsg14Descriptor::getFieldTypeString(int field) const
     return (field>=0 && field<3) ? fieldTypeStrings[field] : nullptr;
 }
 
-const char **TicTocMsg14Descriptor::getFieldPropertyNames(int field) const
+const char **paquete_structDescriptor::getFieldPropertyNames(int field) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -395,7 +395,7 @@ const char **TicTocMsg14Descriptor::getFieldPropertyNames(int field) const
     }
 }
 
-const char *TicTocMsg14Descriptor::getFieldProperty(int field, const char *propertyname) const
+const char *paquete_structDescriptor::getFieldProperty(int field, const char *propertyname) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -408,7 +408,7 @@ const char *TicTocMsg14Descriptor::getFieldProperty(int field, const char *prope
     }
 }
 
-int TicTocMsg14Descriptor::getFieldArraySize(void *object, int field) const
+int paquete_structDescriptor::getFieldArraySize(void *object, int field) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -416,13 +416,13 @@ int TicTocMsg14Descriptor::getFieldArraySize(void *object, int field) const
             return basedesc->getFieldArraySize(object, field);
         field -= basedesc->getFieldCount();
     }
-    TicTocMsg14 *pp = (TicTocMsg14 *)object; (void)pp;
+    paquete_struct *pp = (paquete_struct *)object; (void)pp;
     switch (field) {
         default: return 0;
     }
 }
 
-const char *TicTocMsg14Descriptor::getFieldDynamicTypeString(void *object, int field, int i) const
+const char *paquete_structDescriptor::getFieldDynamicTypeString(void *object, int field, int i) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -430,13 +430,13 @@ const char *TicTocMsg14Descriptor::getFieldDynamicTypeString(void *object, int f
             return basedesc->getFieldDynamicTypeString(object,field,i);
         field -= basedesc->getFieldCount();
     }
-    TicTocMsg14 *pp = (TicTocMsg14 *)object; (void)pp;
+    paquete_struct *pp = (paquete_struct *)object; (void)pp;
     switch (field) {
         default: return nullptr;
     }
 }
 
-std::string TicTocMsg14Descriptor::getFieldValueAsString(void *object, int field, int i) const
+std::string paquete_structDescriptor::getFieldValueAsString(void *object, int field, int i) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -444,16 +444,16 @@ std::string TicTocMsg14Descriptor::getFieldValueAsString(void *object, int field
             return basedesc->getFieldValueAsString(object,field,i);
         field -= basedesc->getFieldCount();
     }
-    TicTocMsg14 *pp = (TicTocMsg14 *)object; (void)pp;
+    paquete_struct *pp = (paquete_struct *)object; (void)pp;
     switch (field) {
-        case 0: return long2string(pp->getSource());
-        case 1: return long2string(pp->getDestination());
-        case 2: return long2string(pp->getHopCount());
+        case 0: return long2string(pp->getFromSource());
+        case 1: return long2string(pp->getSequenceNumber());
+        case 2: return long2string(pp->getOrigin());
         default: return "";
     }
 }
 
-bool TicTocMsg14Descriptor::setFieldValueAsString(void *object, int field, int i, const char *value) const
+bool paquete_structDescriptor::setFieldValueAsString(void *object, int field, int i, const char *value) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -461,16 +461,16 @@ bool TicTocMsg14Descriptor::setFieldValueAsString(void *object, int field, int i
             return basedesc->setFieldValueAsString(object,field,i,value);
         field -= basedesc->getFieldCount();
     }
-    TicTocMsg14 *pp = (TicTocMsg14 *)object; (void)pp;
+    paquete_struct *pp = (paquete_struct *)object; (void)pp;
     switch (field) {
-        case 0: pp->setSource(string2long(value)); return true;
-        case 1: pp->setDestination(string2long(value)); return true;
-        case 2: pp->setHopCount(string2long(value)); return true;
+        case 0: pp->setFromSource(string2long(value)); return true;
+        case 1: pp->setSequenceNumber(string2long(value)); return true;
+        case 2: pp->setOrigin(string2long(value)); return true;
         default: return false;
     }
 }
 
-const char *TicTocMsg14Descriptor::getFieldStructName(int field) const
+const char *paquete_structDescriptor::getFieldStructName(int field) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -483,7 +483,7 @@ const char *TicTocMsg14Descriptor::getFieldStructName(int field) const
     };
 }
 
-void *TicTocMsg14Descriptor::getFieldStructValuePointer(void *object, int field, int i) const
+void *paquete_structDescriptor::getFieldStructValuePointer(void *object, int field, int i) const
 {
     omnetpp::cClassDescriptor *basedesc = getBaseClassDescriptor();
     if (basedesc) {
@@ -491,7 +491,7 @@ void *TicTocMsg14Descriptor::getFieldStructValuePointer(void *object, int field,
             return basedesc->getFieldStructValuePointer(object, field, i);
         field -= basedesc->getFieldCount();
     }
-    TicTocMsg14 *pp = (TicTocMsg14 *)object; (void)pp;
+    paquete_struct *pp = (paquete_struct *)object; (void)pp;
     switch (field) {
         default: return nullptr;
     }
